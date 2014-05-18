@@ -37,8 +37,17 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-      files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'buster']
+      scripts: {
+        files: ['<%= jshint.files %>'],
+        tasks: ['jshint', 'buster']
+      },
+      css: {
+        files: 'sass/**/*.scss',
+        tasks: ['sass'],
+        options: {
+          livereload: false, // for now
+        },
+      },
     },
     bower: {
       install: {
@@ -61,7 +70,7 @@ module.exports = function(grunt) {
     },
     rev: {
       files: {
-        src: ['dist/overtime.min.js']
+        src: ['dist/overtime.min.js', 'dist/main.css']
       }
     },
     usemin: {
@@ -88,6 +97,13 @@ module.exports = function(grunt) {
           keepalive: true
         }
       }
+    },
+    sass: {
+      dist: {
+        files: {
+          'dist/main.css': 'sass/main.scss'
+        }
+      }
     }
   });
 
@@ -96,6 +112,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
@@ -106,7 +123,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint', 'buster']);
 
-  grunt.registerTask('default', ['jshint', 'buster', 'concat', 'uglify']);
+  grunt.registerTask('default', ['jshint', 'buster', 'concat', 'uglify', 'sass']);
 
-  grunt.registerTask('build', ['clean', 'htmlmin:dist', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'rev', 'usemin', 'clean:unused_files']);
+  grunt.registerTask('build', ['clean', 'htmlmin:dist', 'useminPrepare', 'concat', 'uglify', 'sass', 'cssmin', 'rev', 'usemin', 'clean:unused_files']);
 };

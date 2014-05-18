@@ -10,7 +10,8 @@
   "dependencies": {
     "jQuery": "~2.1.1",
     "moment": "~2.6.0",
-    "simpleStorage": "~0.1.2"
+    "simpleStorage": "~0.1.2",
+    "jquery-requestAnimationFrame": "~0.1.2"
   },
   "devDependencies": {
   },
