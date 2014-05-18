@@ -60,7 +60,10 @@ var updateUserData = function(sanitizedUserData) {
   var operationResult = simpleStorage.set(USER_DATA_KEY, sanitizedUserData);
   if (operationResult !== true) {
     handleSavingError();
+    return;
   }
+
+  handleSuccessfulUpdate();
 };
 
 var addUserDataEntry = function(yyyymmdd, minutes, userData) {
@@ -75,15 +78,19 @@ var addUserDataEntry = function(yyyymmdd, minutes, userData) {
 };
 
 var handleNoStorage = function() {
-  alert('No local storage available. Are you running in private mode?');
+  showError('No local storage available. Are you running in private mode?');
 };
 
 var handleSavingError = function() {
-  alert('Could not save the new entry. Are you running in private mode?');
+  showError('Could not save the new entry. Are you running in private mode?');
 };
 
 var handleSanitizationError = function(k, v) {
   // log this somehow for postmortem analysis
+};
+
+var handleSuccessfulUpdate = function() {
+  showMessage("Saved!");
 };
 
 var scaffoldUserDataStructure = function() {
@@ -127,6 +134,9 @@ var readableTimeDelta = function(minutes) {
   
   return parseInt(minutes / 60) + " hours, " + (minutes % 60) + " minutes";
 };
+
+var showError = function() {};
+var showMessage = function() {};
 
 // sync user data with server
 // load user data from server

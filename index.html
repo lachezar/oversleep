@@ -1,9 +1,61 @@
 <!doctype html>
 <html>
+<head>
+  <meta name="viewport" content="width=device-width, user-scalable=no">
+
+  <!-- build:css main.css -->
+  <link rel="stylesheet" type="text/css" href="dist/main.css">
+  <!-- endbuild -->
+</head>
 <body>
+<main>
+
+<section class="overtime-amount">
+<div class="label">I have overtimed:</div>
+<div class="default-overtime-amount buttons">
+  <button class="time-amount" data-amount="1">1h</button>
+  <button class="time-amount" data-amount="2">2h</button>
+  <button class="time-amount" data-amount="3">3h</button>
+  <button class="activate-custom-overtime-amount more">+</button>
+</div>
+
+<div class="custom-overtime-amount hidden">
+  <input name="overtime_hours" type="number" pattern="[0-9]*" placeholder="hours" min="0" max="24"> : <input name="overtime_minutes" type="number" pattern="[0-9]*" placeholder="minutes" min="0" max="60">
+  <button>set</button>
+</div>
+</section>
+
+<section class="overtime-date">
+<div class="label">When:</div>
+<div class="default-overtime-date buttons">
+  <button class="today">Today</button>
+  <button class="yesterday">Yesterday</button>
+  <button class="activate-custom-overtime-date more">+</button>
+</div>
+
+<div class="custom-overtime-date hidden">
+  <input name="overtime_date" type="date">
+</div>
+</section>
+
+<section class="current-statement">
+  <div class="report label">
+    <span class="current-time"></span><span class="current-statement-delim"></span><span class="current-date"></span>
+  </div>
+  <div class="buttons">
+    <button class="save">Save</button>
+    <button class="reset">Reset</button>
+  </div>
+</section>
+
+</main>
+
+<div class="message hidden"><div class="message-text"></div></div>
+<div class="error hidden"><div class="message-text"></div></div>
 
 <!-- build:js overtime.min.js -->
 <script src="/lib/jQuery/jquery.js"></script>
+<script src="/lib/jquery-requestAnimationFrame/src/jquery.requestAnimationFrame.js"></script>
 <script src="/lib/simpleStorage/simpleStorage.js"></script>
 <script src="/lib/moment/moment.js"></script>
 <script src="/src/core.js"></script>
