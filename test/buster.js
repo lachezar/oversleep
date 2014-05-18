@@ -1,15 +1,15 @@
 var config = module.exports;
 
 config["App core tests"] = {
-  environment: "browser",  // or "node"
+  environment: "browser",
   rootPath: "../",
   sources: [
-    "jquery-2*.js",
-    "moment*.js",
-    "simpleStorage.js",
-    "app.js"
+    "lib/jQuery/jquery.js",
+    "lib/moment/moment.js",
+    "lib/simpleStorage/simpleStorage.js",
+    "core.js"
   ],
   tests: [
-    "test/app-test.js"
+    "test/core-test.js"
   ]
 };
