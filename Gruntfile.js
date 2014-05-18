@@ -7,13 +7,16 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['src/**/*.js'],
+        src: ['src/**/*.js', 'lib/**/*.js'],
         dest: 'dist/<%= pkg.name %>.js'
       }
     },
     uglify: {
       options: {
-        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
+        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n',
+        mangle: true,
+        compress: true,
+        report: 'min'
       },
       dist: {
         files: {
@@ -35,7 +38,7 @@ module.exports = function(grunt) {
     },
     watch: {
       files: ['<%= jshint.files %>'],
-      tasks: ['jshint', 'qunit']
+      tasks: ['jshint', 'buster']
     },
     bower: {
       install: {

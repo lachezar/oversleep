@@ -7,7 +7,7 @@ config["App core tests"] = {
     "lib/jQuery/jquery.js",
     "lib/moment/moment.js",
     "lib/simpleStorage/simpleStorage.js",
-    "core.js"
+    "src/core.js"
   ],
   tests: [
     "test/core-test.js"
