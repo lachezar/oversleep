@@ -22,7 +22,7 @@ var sanitizeUserData = function(userData) {
   });
   
   return sanitizedUserData;
-}
+};
 
 var isEntryValid = function(yyyymmdd, minutes) {
   if (!moment(yyyymmdd, "YYYYMMDD").isValid()) {
@@ -32,7 +32,7 @@ var isEntryValid = function(yyyymmdd, minutes) {
     return false;
   }
   return true;
-}
+};
 
 var getUserData = function() {
   if (!simpleStorage.canUse()) {
@@ -125,7 +125,7 @@ var readableTimeDelta = function(minutes) {
     return parseInt(minutes / 60) + " hours";
   }
   
-  return parseInt(minutes / 60) + " hours, " + (minutes % 60) + " minutes"
+  return parseInt(minutes / 60) + " hours, " + (minutes % 60) + " minutes";
 };
 
 // sync user data with server

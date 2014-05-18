@@ -20,7 +20,7 @@ var showDailyOvertime = function(event) { // ui
 
 var showThisMonthOvertime = function(event) { // ui
   var userData = getUserData();
-  var minutes = totalOvertimeThisMonth(new Date, userData);
+  var minutes = totalOvertimeThisMonth(new Date(), userData);
   
   $('body div:first').text(readableTimeDelta(minutes));
 };
