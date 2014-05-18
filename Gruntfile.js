@@ -46,6 +46,48 @@ module.exports = function(grunt) {
     },
     buster: {
       app: {}
+    },
+    useminPrepare: {
+      html: 'index.html',
+      options: {
+        dest: 'dist'
+      }
+    },
+    cssmin: {
+      // no css yet
+      combine: {
+        files: {}
+      }
+    },
+    rev: {
+      files: {
+        src: ['dist/overtime.min.js']
+      }
+    },
+    usemin: {
+      html: 'dist/index.html',
+    },
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: false,
+          collapseWhitespace: false
+        },
+        files: {
+          'dist/index.html': 'index.html'
+        }
+      },
+    },
+    clean: {
+      dist: ['dist'],
+      unused_files: ['dist/<%= pkg.name %>.js']
+    },
+    connect: {
+      server: {
+        options: {
+          keepalive: true
+        }
+      }
     }
   });
 
@@ -53,12 +95,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-buster');
+  grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-rev');
 
   grunt.registerTask('test', ['jshint', 'buster']);
 
   grunt.registerTask('default', ['jshint', 'buster', 'concat', 'uglify']);
 
-  grunt.registerTask('build', ['useminPrepare', 'concat', 'cssmin', 'uglify', 'rev', 'usemin']);
+  grunt.registerTask('build', ['clean', 'htmlmin:dist', 'useminPrepare', 'concat', 'cssmin', 'uglify', 'rev', 'usemin', 'clean:unused_files']);
 };
