@@ -39,7 +39,7 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: ['<%= jshint.files %>'],
-        tasks: ['jshint', 'buster']
+        tasks: ['jshint', 'buster::test']
       },
       css: {
         files: 'sass/**/*.scss',
@@ -104,6 +104,12 @@ module.exports = function(grunt) {
           'dist/main.css': 'sass/main.scss'
         }
       }
+    },
+    copy: {
+      main: {
+        src: 'fonts/*',
+        dest: 'dist/',
+      },
     }
   });
 
@@ -116,6 +122,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-bower-task');
   grunt.loadNpmTasks('grunt-buster');
   grunt.loadNpmTasks('grunt-usemin');
@@ -123,7 +130,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('test', ['jshint', 'buster']);
 
-  grunt.registerTask('default', ['jshint', 'buster', 'concat', 'uglify', 'sass']);
+  grunt.registerTask('default', ['jshint', 'buster::test', 'concat', 'uglify', 'sass', 'copy']);
 
-  grunt.registerTask('build', ['clean', 'htmlmin:dist', 'useminPrepare', 'concat', 'uglify', 'sass', 'cssmin', 'rev', 'usemin', 'clean:unused_files']);
+  grunt.registerTask('build', ['clean', 'copy', 'htmlmin:dist', 'useminPrepare', 'concat', 'uglify', 'sass', 'cssmin', 'rev', 'usemin', 'clean:unused_files']);
 };

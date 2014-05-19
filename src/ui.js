@@ -153,7 +153,7 @@ var showDailyOvertime = function(event) { // ui
   var userData = getUserData();
   var yyyymm = event.target.dataset.yyyymm;
   var daily = overtimeByMonth(yyyymm, userData);
-  var parent = $('body > div:first');
+  var parent = $('body > div:first2');
   
   $.each(daily, function(i, v) {
     render(templates.dailyOvertime, v, parent);
@@ -176,3 +176,31 @@ var showError = function(text) {
   $(".error > .message-text").text(text);
   $(".error").fadeIn('fast').delay(5000).fadeOut('fast');
 };
+
+// Window load event used just in case window height is dependant upon images
+$(window).bind("load", function() { 
+       
+       var footerHeight = 0,
+           footerTop = 0,
+           $footer = $(".button-group");
+         
+         //alert([$(window).height(), $("#content").height(), footerHeight]);  
+         
+       positionFooter();
+       
+       function positionFooter() {
+       
+                footerHeight = $footer.height();
+                footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
+       
+               if ( ($("#content").height()+footerHeight) < $(window).height()) {
+                  //alert([$(window).height(), $("#content").height(), footerHeight]);
+                   $footer.css({
+                        "margin-top": $(window).height() - ($("#content").height() + footerHeight) - 10
+                   });
+               }
+               
+       }
+
+               
+});
