@@ -1,0 +1,15 @@
+@mixin sticky-top($px) {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  top: $px;
+}
+
+@mixin sticky-bottom($px) {
+  position: -webkit-sticky;
+  position: -moz-sticky;
+  position: -ms-sticky;
+  position: -o-sticky;
+  bottom: $px;
+}
