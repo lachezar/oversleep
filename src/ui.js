@@ -78,6 +78,19 @@ $(function() {
 
 });
 
+// the tabs should be on the bottom of the screen
+$(window).on("load", function() {     
+  var $footer = $(".button-group");
+  var footerHeight = $footer.height();
+  var footerTop = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";
+
+  if (($("#content").height()+footerHeight) < $(window).height()) {
+    $footer.css({
+      "margin-top": $(window).height() - ($("#content").height() + footerHeight) - 10
+    });
+  }
+});
+
 var setCurrentTime = function(text, amount) {
   $(".current-time").text(text);
   $(".current-time").data('amount', amount);
@@ -177,30 +190,3 @@ var showError = function(text) {
   $(".error").fadeIn('fast').delay(5000).fadeOut('fast');
 };
 
-// Window load event used just in case window height is dependant upon images
-$(window).bind("load", function() { 
-       
-       var footerHeight = 0,
-           footerTop = 0,
-           $footer = $(".button-group");
-         
-         //alert([$(window).height(), $("#content").height(), footerHeight]);  
-         
-       positionFooter();
-       
-       function positionFooter() {
-       
-                footerHeight = $footer.height();
-                footerTop = ($(window).scrollTop()+$(window).height()-footerHeight)+"px";
-       
-               if ( ($("#content").height()+footerHeight) < $(window).height()) {
-                  //alert([$(window).height(), $("#content").height(), footerHeight]);
-                   $footer.css({
-                        "margin-top": $(window).height() - ($("#content").height() + footerHeight) - 10
-                   });
-               }
-               
-       }
-
-               
-});
