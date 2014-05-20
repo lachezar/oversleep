@@ -61,24 +61,29 @@ section {
 }
 
 .button-group {
-  
-  height: 3em;
-  
+  margin: 0 -8px;
+
   @include display(flex);
   @include align-items(stretch);
   @include flex-direction(row);
   @include justify-content(flex-start);
-  
+
   button {
+    height: 3em;
     padding-bottom: 1em;
     padding-top: 1em;
-    
+    border-top: none;
+    word-spacing: -4px;
+
     @include flex(1);
-    
+
     &.active {
+      border-top: none;
       padding-bottom: 1em;
       padding-top: 1em;
     }
+
+
   }
 }
 

@@ -79,7 +79,7 @@ $(function() {
 });
 
 // the tabs should be on the bottom of the screen
-$(window).on("load", function() {     
+$(window).on("load", function() {
   var $footer = $(".button-group");
   var footerHeight = $footer.height();
   var footerTop = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";
