@@ -1,3 +1,5 @@
+![travis](https://travis-ci.org/lucho-yankov/overtime.svg?branch=master)
+
 overtime
 ========
 
