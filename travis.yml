@@ -1,0 +1,9 @@
+script:
+    - "grunt buster"
+
+language: node_js
+
+node_js:
+    - 0.6
+before_script:
+    - npm install -g grunt-cli
