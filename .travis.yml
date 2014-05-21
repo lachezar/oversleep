@@ -1,0 +1,10 @@
+script:
+    - "grunt buster"
+
+language: node_js
+
+node_js:
+    - 0.10
+before_script:
+    - npm install -g buster grunt-cli grunt-bower-task
+    - grunt bower:install
