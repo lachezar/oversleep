@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <title>Overtime</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="A simple web app to track your overtime. You are working hard and you deserve to know!">
+  <meta name="keywords" content="overtime, track, stats, work, hours, calendar, web, app, html5, css3">
+  <meta name="author" content="Lucho Yankov">
+
+  <!-- build:css main.css -->
+  <link rel="stylesheet" type="text/css" href="dist/main.css">
+  <!-- endbuild -->
+</head>
+<body>
+<div id="content">
+<!-- content here -->
+</div>
+
+<div class="button-group">
+  <button class="icon-signup"> Add</button>
+  <button class="active icon-notebook"> Stats</button>
+  <button class="icon-html52"> App</button>
+</div>
+
+
+<div class="message hidden"><div class="message-text"></div></div>
+<div class="error hidden"><div class="message-text"></div></div>
+
+<!-- build:js overtime.min.js -->
+<script src="/lib/jQuery/jquery.js"></script>
+<script src="/lib/jquery-requestAnimationFrame/src/jquery.requestAnimationFrame.js"></script>
+<script src="/lib/simpleStorage/simpleStorage.js"></script>
+<script src="/lib/moment/moment.js"></script>
+<script src="/src/core.js"></script>
+<script src="/src/ui.js"></script>
+<!-- endbuild -->
+</body>
+</html>

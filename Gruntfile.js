@@ -57,7 +57,7 @@ module.exports = function(grunt) {
       app: {}
     },
     useminPrepare: {
-      html: 'index.html',
+      html: ['index.html', 'stats.html', 'app.html'],
       options: {
         dest: 'dist'
       }
@@ -65,7 +65,10 @@ module.exports = function(grunt) {
     cssmin: {
       // no css yet
       combine: {
-        files: {}
+        files: {
+          'dist/main.css': 'dist/main.css'
+        },
+        report: 'min'
       }
     },
     rev: {
@@ -74,7 +77,7 @@ module.exports = function(grunt) {
       }
     },
     usemin: {
-      html: 'dist/index.html',
+      html: ['dist/index.html', 'dist/stats.html', 'dist/app.html'],
     },
     htmlmin: {
       dist: {
@@ -83,7 +86,9 @@ module.exports = function(grunt) {
           collapseWhitespace: false
         },
         files: {
-          'dist/index.html': 'index.html'
+          'dist/index.html': 'index.html',
+          'dist/stats.html': 'stats.html',
+          'dist/app.html': 'app.html'                    
         }
       },
     },
