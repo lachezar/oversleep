@@ -18,8 +18,8 @@ describe("App", function () {
     '20140430': 26*60
   }};
   
-  var faultySampleZeroMinutes = {entries: {
-    '20140420': 0
+  var faultySampleNegativeMinutes = {entries: {
+    '20140420': -1
   }};
   
   var faultySampleDate = {entries: {
@@ -61,7 +61,7 @@ describe("App", function () {
   });
   
   it("sanitizes the overtime data", function () {
-    expect(sanitizeUserData(faultySampleZeroMinutes)).toEqual(initialSample);
+    expect(sanitizeUserData(faultySampleNegativeMinutes)).toEqual(initialSample);
     expect(sanitizeUserData(faultySampleMinutes)).toEqual(initialSample);
     expect(sanitizeUserData(faultySampleDate)).toEqual(initialSample);
     expect(sanitizeUserData(sample)).toEqual(sample);
