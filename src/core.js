@@ -28,7 +28,7 @@ var isEntryValid = function(yyyymmdd, minutes) {
   if (!moment(yyyymmdd, "YYYYMMDD").isValid()) {
     return false;
   }
-  if (minutes <= 0 || minutes > 24*60) {
+  if (minutes < 0 || minutes > 24*60) {
     return false;
   }
   return true;
@@ -129,10 +129,10 @@ var overtimeDaily = function(yyyymm, userData) {
 
 var readableTimeDelta = function(minutes) {
   if (minutes % 60 === 0) {
-    return parseInt(minutes / 60) + " hours";
+    return parseInt(minutes / 60);
   }
   
-  return parseInt(minutes / 60) + " hours, " + (minutes % 60) + " minutes";
+  return parseInt(minutes / 60) + ":" + (minutes % 60);
 };
 
 var showError = function() {};
