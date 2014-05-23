@@ -54,10 +54,10 @@
 
 </div>
 
-<div class="button-group">
-  <button class="icon-signup"> Add</button>
-  <button class="active icon-notebook"> Stats</button>
-  <button class="icon-html52"> App</button>
+<div class="tabs button-group">
+  <a href="/"><button class="tab-add active icon-signup"> Add</button></a>
+  <a href="/stats.html"><button class="tab-stats icon-notebook"> Stats</button></a>
+  <a href="/app.html"><button class="tab-app icon-html52"> App</button></a>
 </div>
 
 
@@ -67,10 +67,14 @@
 <!-- build:js overtime.min.js -->
 <script src="/lib/jQuery/jquery.js"></script>
 <script src="/lib/jquery-requestAnimationFrame/src/jquery.requestAnimationFrame.js"></script>
+<script src="/lib/jquery-pjax/jquery.pjax.js"></script>
 <script src="/lib/simpleStorage/simpleStorage.js"></script>
 <script src="/lib/moment/moment.js"></script>
+<script src="/lib/fastclick/fastclick.js"></script>
 <script src="/src/core.js"></script>
+<script src="/src/utils.js"></script>
 <script src="/src/ui.js"></script>
+<script src="/src/stats-ui.js"></script>
 <!-- endbuild -->
 </body>
 </html>
