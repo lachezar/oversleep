@@ -60,7 +60,7 @@ section {
   background-color: $light-red;
 }
 
-.button-group {
+.tabs {
   margin: 0 -8px;
 
   @include display(flex);
@@ -68,25 +68,35 @@ section {
   @include flex-direction(row);
   @include justify-content(flex-start);
 
-  button {
-    height: 3em;
-    padding-bottom: 1em;
-    padding-top: 1em;
-    border-top: none;
-    word-spacing: -4px;
+  > a {
 
     @include flex(1);
 
-    &.active {
-      border-top: none;
+    button {
+
+      height: 3em;
       padding-bottom: 1em;
       padding-top: 1em;
-    }
+      border-top: none;
+      word-spacing: -4px;
 
+
+      width: 100%;
+
+      &.active {
+        border-top: none;
+        padding-bottom: 1em;
+        padding-top: 1em;
+      }
+    }
 
   }
 }
 
+.add-to-home-screen {
+  width: 70px;
+  height: 42px;
+}
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
   button {
