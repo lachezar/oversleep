@@ -4,8 +4,12 @@
   "description": "A simple web app to track your overtime. You are working hard and you deserve to know!",
   "launch_path": "/index.html",
   "icons": {
+    "32": "/images/icon-32-ff.png",
     "60": "/images/icon-60-ff.png",
-    "120": "/images/icon-120-ff.png"
+    "90": "/images/icon-90-ff.png",
+    "120": "/images/icon-120-ff.png",
+    "128": "/images/icon-128-ff.png",
+    "256": "/images/icon-256-ff.png"
   },
   "developer": {
     "name": "Lucho Yankov",
