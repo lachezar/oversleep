@@ -4,17 +4,57 @@
   <title>Overtime</title>
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
   <meta name="description" content="A simple web app to track your overtime. You are working hard and you deserve to know!">
-  <meta name="keywords" content="overtime, track, stats, work, hours, calendar, web, app, html5, css3">
+  <meta name="keywords" content="overtime, track, stats, work, hours, calendar, schedule, help, web, app, html5, css3">
   <meta name="author" content="Lucho Yankov">
 
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <link rel="apple-touch-icon" href="/images/icon-60.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/icon-76.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/images/icon-120.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/images/icon-152.png">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="196x196" href="/images/icon-196.png">
+
   <!-- build:css main.css -->
-  <link rel="stylesheet" type="text/css" href="dist/main.css">
+  <link rel="stylesheet" type="text/css" href="/dist/main.css">
   <!-- endbuild -->
 </head>
 <body>
 <div id="content">
-Show instructions for iOS, Android and FirefoxOS.
-<img src="images/add_to_homescreen.jpg" alt="add to home screen" class="add-to-home-screen">
+
+<section>
+<strong>Overtime</strong> is a web app that helps you track your overtime.
+</section>
+
+<section id="default" class="install-instructions">
+You can run it in your browser or add it to the home screen of your mobile device.
+</section>
+
+<section id="iOS" class="install-instructions">
+Add it to the home screen of your iOS device by pressing <img src="images/ios_add_to_homescreen.png" alt="add to home screen" class="add-to-home-screen"> and "Add to Home Screen".
+</section>
+
+<section id="android-chrome" class="install-instructions">
+Add it to the home screen of your Android device by pressing <img src="images/android_add_to_homescreen.png" alt="add to home screen" class="add-to-home-screen"> and "Add to home screen".
+</section>
+
+<section id="android" class="install-instructions">
+Add it to the home screen of your Android device by pressing "Settings" button, then "Save to bookmarks", then from the "Add to" menu select "Home screen".
+</section>
+
+<section id="firefox-os" class="install-instructions">
+<button class="firefox-os-install">Install the app</button>
+</section>
+
+<section>
+  <div>Created by <a href="mailto:lucho.yankov@gmail.com?Subject=Overtime%20WebApp" target="_blank">Lucho Yankov</a></div>
+  <div>Twitter: <a href="https://twitter.com/lucho_yankov" target="_blank">@lucho_yankov</a></div>
+  <div>GitHub: <a href="https://github.com/lucho-yankov" target="_blank">lucho-yankov</a></div>
+</section>
+
+
 </div>
 
 <div class="tabs button-group">
@@ -38,6 +78,7 @@ Show instructions for iOS, Android and FirefoxOS.
 <script src="/src/utils.js"></script>
 <script src="/src/ui.js"></script>
 <script src="/src/stats-ui.js"></script>
+<script src="/src/app-ui.js"></script>
 <!-- endbuild -->
 </body>
 </html>

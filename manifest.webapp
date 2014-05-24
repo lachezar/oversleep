@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "name": "Overtime",
+  "description": "A simple web app to track your overtime. You are working hard and you deserve to know!",
+  "launch_path": "/index.html",
+  "icons": {
+    "60": "/images/icon-60-ff.png",
+    "120": "/images/icon-120-ff.png"
+  },
+  "developer": {
+    "name": "Lucho Yankov",
+    "url": "https://github.com/lucho-yankov"
+  },
+  "default_locale": "en"
+}

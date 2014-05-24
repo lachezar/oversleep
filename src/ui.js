@@ -14,6 +14,7 @@ var init = function(url) {
     // init app
 
     $(".tabs .tab-app").addClass('active');
+    initApp();
   } else if (url.indexOf("/stats.html") > -1) {
     $(".tabs .tab-stats").addClass('active');
     initStats();
@@ -34,14 +35,14 @@ var initTabs = function() {
 
   if (($("#content").height()+footerHeight) < $(window).height()) {
     footer.css({
-      "margin-top": $(window).height() - ($("#content").height() + footerHeight) - 10,
+      "margin-top": $(window).height() - ($("#content").height() + footerHeight) - 8,
       "margin-bottom": 0
     });
   } else {
-    if (isIOS(navigator.userAgent)) {
-      // fix the annoying Safari behavior
-      footer.css("margin-bottom", 20);
-    }
+    footer.css({
+      "margin-top": 10,
+      "margin-bottom": 0
+    });
   }
 };
 
@@ -136,7 +137,7 @@ var showThisMonthOvertime = function(event) { // ui
 
 var showMessage = function(text) {
   $(".message-text").text(text);
-  $(".message").fadeIn('fast').delay(3000).fadeOut('fast');
+  $(".message").fadeIn('fast').delay(1000).fadeOut('fast');
 };
 
 var showError = function(text) {
@@ -191,7 +192,7 @@ var calculate_time = function(event) {
 
 var initIndex = function() {
 
-  // overtime controlls
+  // overtime controls
   $(".activate-custom-overtime-amount").on('click', function(event) {
     $(".default-overtime-amount").hide('fast');
     $(".custom-overtime-amount").show('fast');

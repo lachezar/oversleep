@@ -1,26 +1,5 @@
 var initStats = function() {
   renderStats();
-
-  $(".icon-html52").on('click', function() {
-    var a = scaffoldUserDataStructure();
-    addUserDataEntry('20140501', '120', a);
-    addUserDataEntry('20140502', '60', a);
-    addUserDataEntry('20140503', '90', a);
-    addUserDataEntry('20140421', '100', a);
-    addUserDataEntry('20140422', '180', a);
-    addUserDataEntry('20140411', '120', a);
-    addUserDataEntry('20140401', '60', a);
-    addUserDataEntry('20140402', '120', a);
-    addUserDataEntry('20140301', '60', a);
-    addUserDataEntry('20140306', '120', a);
-    addUserDataEntry('20130501', '180', a);
-    addUserDataEntry('20130502', '60', a);
-    addUserDataEntry('20130516', '60', a);
-    addUserDataEntry('20120701', '60', a);
-    addUserDataEntry('20120711', '120', a);
-    addUserDataEntry('20120721', '120', a);
-    addUserDataEntry('20120728', '120', a);
-  });
 };
 
 var renderStats = function() {
@@ -28,14 +7,20 @@ var renderStats = function() {
   if (stats.length > 0) {
     var userData = getUserData();
 
-    stats.html(getStatsHTML(userData));
+    if (Object.keys(userData.entries).length === 0) {
+      // fresh start
+      stats.html('<li><a href="/">Press the "Add" tab to add your first entry.</a></li>');
+    } else {
 
-    $(".stats > li").bind('click', function(event) {
-      var container = $(event.target).closest('.stats > li');
-      container.find('ul').slideToggle('fast');
-      container.toggleClass('is-expanded');
-      event.preventDefault();
-    });
+      stats.html(getStatsHTML(userData));
+
+      $(".stats > li").bind('click', function(event) {
+        var container = $(event.target).closest('.stats > li');
+        container.find('ul').slideToggle('fast');
+        container.toggleClass('is-expanded');
+        event.preventDefault();
+      });
+    }
   }
 };
 

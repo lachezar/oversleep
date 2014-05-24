@@ -111,10 +111,18 @@ module.exports = function(grunt) {
       }
     },
     copy: {
-      main: {
+      fonts: {
         src: 'fonts/*',
         dest: 'dist/',
       },
+      images: {
+        src: 'images/*',
+        dest: 'dist/',
+      },
+      manifest: {
+        src: 'manifest.webapp',
+        dest: 'dist/'
+      }
     }
   });
 
