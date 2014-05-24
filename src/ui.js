@@ -210,7 +210,7 @@ var initIndex = function() {
     updateOvertimeStatementTime(amount);
   });
 
-  $("[name=overtime_date]").on('change', function(event) {
+  $("input[name=overtime_date]").on('change blur', function(event) {
     var date = moment(event.target.value);
     updateOvertimeStatementDate(date);
   });
