@@ -24,4 +24,10 @@ Make sure the following lines in "_bitters.scss" are uncommented:
 @import "grid-settings";
 ```
 
+TODO
+====
 
+* Layout/templating mechanism that will allow html code re-use (especially the common parts as js, tabs, etc.)
+* Check for spelling mistakes.
+* Optimize images
+* Make the Save dialog less ugly
