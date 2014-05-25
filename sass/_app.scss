@@ -65,11 +65,10 @@ section {
 
   @include display(flex);
   @include align-items(stretch);
-  @include flex-direction(row);
-  @include justify-content(flex-start);
 
   > a {
 
+    display: block;
     @include flex(1);
 
     button {
