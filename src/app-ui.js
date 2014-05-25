@@ -1,18 +1,19 @@
 var initApp = function() {
+  $(".install-instructions").hide();
 
   var ua = navigator.userAgent;
-  if (isIOS(ua)) {
-    $(".install-instructions").hide();
+  if (isWebView()) {
+    // hide all instructions
+  } else if (isIOS(ua)) {
     $("#iOS.install-instructions").show();
   } else if (isAndroidChrome(ua)) {
-    $(".install-instructions").hide();
     $("#android-chrome.install-instructions").show();
   } else if (isAndroid(ua)) {
-    $(".install-instructions").hide();
     $("#android.install-instructions").show();
   } else if (isFirefoxOS(ua)) {
-    $(".install-instructions").hide();
     showFFInstallInstructions();
+  } else {
+    $("#default.install-instructions").show();
   }
 
   window.history.replaceState(null, "Overtime", "/");

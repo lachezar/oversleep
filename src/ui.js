@@ -25,6 +25,7 @@ var init = function(url) {
 
   initTabs();
   FastClick.attach(document.body);
+  initWebViewCookie(location.href);
 };
 
 // the tabs should be on the bottom of the screen
@@ -43,6 +44,12 @@ var initTabs = function() {
       "margin-top": 10,
       "margin-bottom": 0
     });
+  }
+};
+
+var initWebViewCookie = function(href) {
+  if (href.indexOf("webview=1") > -1) {
+    document.cookie = "webview=1";
   }
 };
 

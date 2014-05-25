@@ -13,3 +13,7 @@ var isAndroidChrome = function(ua) {
 var isFirefoxOS = function(ua) {
   return !!navigator.mozApps;
 };
+
+var isWebView = function() {
+  return document.cookie.indexOf("webview=1") > -1;
+}
