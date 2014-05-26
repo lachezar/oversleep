@@ -5,14 +5,25 @@ $(function() {
   $(document).on("pjax:success", function(event, data, status, xhr, options) {
     init(options.url);
   });
+
+  $(window).bind("pageshow orientationchange resize popstate", function() {
+    initTabs(location.href);
+  });
 });
 
+
+
 var init = function(url) {
+  initTabs(location.href);
+  FastClick.attach(document.body);
+  initWebViewCookie(location.href);
+};
+
+// the tabs should be on the bottom of the screen
+var initTabs = function(url) {
 
   $(".tabs .active").removeClass('active');
   if (url.indexOf("/app.html") > -1) {
-    // init app
-
     $(".tabs .tab-app").addClass('active');
     initApp();
   } else if (url.indexOf("/stats.html") > -1) {
@@ -23,13 +34,6 @@ var init = function(url) {
     initIndex();
   }
 
-  initTabs();
-  FastClick.attach(document.body);
-  initWebViewCookie(location.href);
-};
-
-// the tabs should be on the bottom of the screen
-var initTabs = function() {
   var footer = $(".button-group");
   var footerHeight = footer.height();
   var footerTop = ($(window).scrollTop() + $(window).height() - footerHeight) + "px";

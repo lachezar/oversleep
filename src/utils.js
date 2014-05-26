@@ -16,4 +16,4 @@ var isFirefoxOS = function(ua) {
 
 var isWebView = function() {
   return document.cookie.indexOf("webview=1") > -1;
-}
+};
