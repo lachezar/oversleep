@@ -9,9 +9,12 @@ $(function() {
   $(window).bind("pageshow orientationchange resize popstate", function() {
     initTabs(location.href);
   });
+
+  $(document).on("click", "button", function(event) {
+    $(event.target).blur();
+    // firefox os keeps the button in focused state after it is clicked - this will reset it
+  });
 });
-
-
 
 var init = function(url) {
   initTabs(location.href);

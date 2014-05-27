@@ -13,7 +13,7 @@
     "simpleStorage": "~0.1.2",
     "jquery-requestAnimationFrame": "~0.1.2",
     "jquery-pjax": "~1.8.2",
-    "fastclick": "~1.0.2"
+    "fastclick": "lucho-yankov/fastclick#master"
   },
   "devDependencies": {
   },

@@ -15,3 +15,7 @@ h1 {
 body {
   margin-bottom: 0;
 }
+
+button::-moz-focus-inner {
+  border: 0;
+}
