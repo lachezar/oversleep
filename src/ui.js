@@ -122,33 +122,6 @@ var toggleStatementDelimiter = function() {
   }
 };
 
-var showMonthlyOvertime = function(event) { // ui
-  var userData = getUserData();
-  var months = totalOvertimeByMonths(userData);
-  
-  var keys = Object.keys(months).sort().reverse();
-  var parent = $('body');
-  render(templates.monthsListItem, [keys, months], parent);
-};
-
-var showDailyOvertime = function(event) { // ui
-  var userData = getUserData();
-  var yyyymm = event.target.dataset.yyyymm;
-  var daily = overtimeByMonth(yyyymm, userData);
-  var parent = $('body > div:first');
-  
-  $.each(daily, function(i, v) {
-    render(templates.dailyOvertime, v, parent);
-  });
-};
-
-var showThisMonthOvertime = function(event) { // ui
-  var userData = getUserData();
-  var minutes = totalOvertimeThisMonth(new Date(), userData);
-  
-  $('body div:first').text(readableTimeDelta(minutes));
-};
-
 var showMessage = function(text) {
   $(".message-text").text(text);
   $(".message").fadeIn('fast').delay(1000).fadeOut('fast');
