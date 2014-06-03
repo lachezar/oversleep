@@ -1,7 +1,7 @@
 {
   "version": "1.0",
-  "name": "Overtime",
-  "description": "A simple web app to track your overtime. You are working hard and you deserve to know!",
+  "name": "Oversleep",
+  "description": "Oversleep is a web app that helps you track how long does it take you to leave your bed after your alarm sets off.",
   "launch_path": "/index.html",
   "icons": {
     "32": "/images/icon-32-ff.png",
