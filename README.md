@@ -1,9 +1,9 @@
 ![travis](https://travis-ci.org/lucho-yankov/overtime.svg?branch=master)
 
-overtime
-========
+oversleep
+=========
 
-Web app to help all workaholics keep track on their overtime.
+Oversleep is a web app that helps you track how long does it take you to leave your bed after your alarm sets off.
 
 Install bourbon:
 
