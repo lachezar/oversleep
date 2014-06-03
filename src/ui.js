@@ -75,7 +75,9 @@ var updateOvertimeStatementTime = function(total) {
   if (total >= 0) {
     var hours = parseInt(total / 60);
     var minutes = total % 60;
-    if (hours === 1 && minutes === 0) {
+    if (hours === 0) {
+      setCurrentTime(minutes + ' minutes', total);
+    } else if (hours === 1 && minutes === 0) {
       setCurrentTime(hours + ' hour', total);
     } else if (hours > 1 && minutes === 0) {
       setCurrentTime(hours + ' hours', total);
@@ -193,7 +195,7 @@ var initIndex = function() {
   $("[name=overtime_hours], [name=overtime_minutes]").on('change', calculate_time);
 
   $(".time-amount").on('click', function(event) {
-    var amount = (parseInt(event.target.dataset.amount) || 0) * 60;
+    var amount = (parseInt(event.target.dataset.amount) || 0);
     updateOvertimeStatementTime(amount);
   });
 
